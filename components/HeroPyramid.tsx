@@ -113,17 +113,17 @@ export const HeroPyramid: React.FC = () => {
     <div className="relative bg-gradient-to-b from-blue-50 to-white pt-24 pb-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <div className="inline-block px-6 py-2 bg-blue-100 text-blue-800 rounded-full text-lg font-bold mb-6 animate-fade-in-up border border-blue-200 shadow-sm">
+          <div className="inline-block px-6 py-2 bg-blue-100 text-blue-800 rounded-full text-base sm:text-lg font-bold mb-6 animate-fade-in-up border border-blue-200 shadow-sm">
             2025 ASN 腎臟健康指引重點
           </div>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-6 leading-tight">
             不是所有磷都一樣壞！
           </h1>
-          <p className="text-2xl sm:text-3xl text-slate-800 max-w-4xl mx-auto font-medium leading-relaxed">
+          <p className="text-xl sm:text-3xl text-slate-800 max-w-4xl mx-auto font-medium leading-relaxed">
             別再只盯著豆類與堅果，真正的敵人是
             <span className="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-lg mx-2 border-b-4 border-red-300 transform -rotate-1">食品添加劑</span>
           </p>
-          <p className="mt-8 text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-normal">
+          <p className="mt-8 text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-normal">
             點擊下方金字塔，了解為什麼「來源」決定了身體的吸收程度。
           </p>
         </div>
@@ -132,12 +132,12 @@ export const HeroPyramid: React.FC = () => {
           {/* Interactive Chart Area */}
           <div className="bg-white p-6 sm:p-10 rounded-[2.5rem] shadow-2xl border-2 border-slate-100 relative min-h-[500px] flex flex-col justify-center">
             <h3 className="text-2xl font-bold text-center text-slate-800 mb-2 absolute top-8 w-full left-0 z-10 pointer-events-none">
-              磷吸收率金字塔 
+              磷吸收率金字塔
             </h3>
             <p className="text-center text-slate-500 absolute top-16 w-full left-0 z-10 text-lg flex items-center justify-center gap-2 animate-pulse">
-               <MousePointerClick size={24} /> 點擊色塊查看詳情
+              <MousePointerClick size={24} /> 點擊色塊查看詳情
             </p>
-            
+
             <div className="flex-grow h-[400px] lg:h-auto mt-12">
               <ResponsiveContainer width="100%" height="100%">
                 <FunnelChart>
@@ -151,20 +151,20 @@ export const HeroPyramid: React.FC = () => {
                     cursor="pointer"
                   >
                     {data.map((entry, index) => (
-                      <Cell 
-                        key={`cell-${index}`} 
-                        fill={entry.fill} 
+                      <Cell
+                        key={`cell-${index}`}
+                        fill={entry.fill}
                         stroke={activeIndex === index ? '#1e293b' : 'none'}
                         strokeWidth={5}
                         className="transition-all duration-300"
                       />
                     ))}
-                    <LabelList 
-                      position="center" 
-                      fill="#fff" 
-                      stroke="none" 
-                      dataKey="absorption" 
-                      className="font-black text-2xl sm:text-4xl drop-shadow-lg pointer-events-none" 
+                    <LabelList
+                      position="center"
+                      fill="#fff"
+                      stroke="none"
+                      dataKey="absorption"
+                      className="font-black text-xl sm:text-4xl drop-shadow-lg pointer-events-none"
                     />
                   </Funnel>
                 </FunnelChart>
@@ -174,52 +174,52 @@ export const HeroPyramid: React.FC = () => {
 
           {/* Info Panel - Typographically Optimized */}
           <div className="flex flex-col h-full">
-            <div 
+            <div
               id="pyramid-details"
               className={`flex-1 p-8 sm:p-12 rounded-[2.5rem] transition-all duration-500 border-l-[16px] shadow-xl flex flex-col justify-between ${styles.containerBg} ${styles.borderColor}`}
             >
-               
-               {/* Header Section */}
-               <div className="border-b border-black/5 pb-6 mb-6">
-                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                    <h2 className={`text-3xl sm:text-4xl font-extrabold ${styles.titleColor} tracking-wide`}>
-                      {activeData.name}
-                    </h2>
-                    <span className={`self-start sm:self-center px-6 py-2 rounded-full text-white text-xl font-bold shadow-md tracking-wide ${styles.badgeBg}`}>
-                      {activeData.risk}
-                    </span>
-                 </div>
-               </div>
-               
-               {/* Metric Section */}
-               <div className="flex flex-col sm:flex-row items-baseline gap-2 mb-6">
-                 <span className={`text-7xl sm:text-8xl font-black ${styles.numberColor} tracking-tighter leading-none`}>
-                   {activeData.absorption}
-                 </span>
-                 <span className="text-2xl font-bold text-slate-600">人體吸收率</span>
-               </div>
 
-               {/* Description */}
-               <p className="text-2xl sm:text-3xl text-slate-800 mb-10 leading-loose font-medium flex-grow">
-                 {activeData.description}
-               </p>
+              {/* Header Section */}
+              <div className="border-b border-black/5 pb-6 mb-6">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <h2 className={`text-2xl sm:text-4xl font-extrabold ${styles.titleColor} tracking-wide`}>
+                    {activeData.name}
+                  </h2>
+                  <span className={`self-start sm:self-center px-6 py-2 rounded-full text-white text-lg sm:text-xl font-bold shadow-md tracking-wide ${styles.badgeBg}`}>
+                    {activeData.risk}
+                  </span>
+                </div>
+              </div>
 
-               {/* Examples Box */}
-               <div className={`p-6 rounded-2xl border-2 ${styles.exampleBg} ${styles.exampleBorder}`}>
-                 <h4 className={`text-xl font-bold mb-3 flex items-center gap-3 ${styles.titleColor}`}>
-                   {styles.icon}
-                   常見食物來源：
-                 </h4>
-                 <p className="text-xl sm:text-2xl text-slate-800 font-bold leading-relaxed">
-                   {activeData.examples}
-                 </p>
-               </div>
+              {/* Metric Section */}
+              <div className="flex flex-col sm:flex-row items-baseline gap-2 mb-6">
+                <span className={`text-6xl sm:text-8xl font-black ${styles.numberColor} tracking-tighter leading-none`}>
+                  {activeData.absorption}
+                </span>
+                <span className="text-xl sm:text-2xl font-bold text-slate-600">人體吸收率</span>
+              </div>
+
+              {/* Description */}
+              <p className="text-xl sm:text-3xl text-slate-800 mb-10 leading-loose font-medium flex-grow">
+                {activeData.description}
+              </p>
+
+              {/* Examples Box */}
+              <div className={`p-6 rounded-2xl border-2 ${styles.exampleBg} ${styles.exampleBorder}`}>
+                <h4 className={`text-lg sm:text-xl font-bold mb-3 flex items-center gap-3 ${styles.titleColor}`}>
+                  {styles.icon}
+                  常見食物來源：
+                </h4>
+                <p className="text-lg sm:text-2xl text-slate-800 font-bold leading-relaxed">
+                  {activeData.examples}
+                </p>
+              </div>
             </div>
 
             <div className="mt-8 text-center lg:text-right">
-              <button 
-                onClick={() => document.getElementById(styles.action.id)?.scrollIntoView({behavior: 'smooth'})}
-                className="inline-flex items-center gap-3 text-slate-400 hover:text-blue-600 font-bold text-lg transition-colors group px-4 py-2"
+              <button
+                onClick={() => document.getElementById(styles.action.id)?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-flex items-center gap-3 text-slate-500 hover:text-blue-700 font-bold text-lg transition-colors group px-4 py-2"
               >
                 {styles.action.text}
                 <ArrowDown size={24} className="group-hover:translate-y-1 transition-transform" />

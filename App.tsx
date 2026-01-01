@@ -31,7 +31,7 @@ const App: React.FC = () => {
     const element = document.getElementById(id);
     if (element) {
       // Adjust offset based on desktop (top header) vs mobile (bottom header)
-      const offset = window.innerWidth >= 768 ? 80 : 0; 
+      const offset = window.innerWidth >= 768 ? 80 : 0;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -51,9 +51,9 @@ const App: React.FC = () => {
           <div className="flex justify-between h-20 items-center">
             <div className="flex-shrink-0 flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection('hero')}>
               <div className="w-10 h-10 bg-blue-700 rounded-xl flex items-center justify-center text-white text-2xl font-bold shadow-sm">P</div>
-              <span className="font-extrabold text-2xl text-slate-900 tracking-tight">控磷新革命</span>
+              <span className="font-extrabold text-2xl text-slate-900 tracking-tight">控磷新觀念</span>
             </div>
-            
+
             <div className="flex space-x-8">
               {[
                 { id: 'hero', label: '核心觀念' },
@@ -61,14 +61,13 @@ const App: React.FC = () => {
                 { id: 'traffic', label: '避雷紅綠燈' },
                 { id: 'cooking', label: '烹調除磷' },
               ].map((item) => (
-                <button 
+                <button
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)} 
-                  className={`text-lg font-bold transition-colors py-2 border-b-2 ${
-                    activeSection === item.id 
-                      ? 'text-blue-700 border-blue-700' 
+                  onClick={() => scrollToSection(item.id)}
+                  className={`text-lg font-bold transition-colors py-2 border-b-2 ${activeSection === item.id
+                      ? 'text-blue-700 border-blue-700'
                       : 'text-slate-600 border-transparent hover:text-blue-600'
-                  }`}
+                    }`}
                 >
                   {item.label}
                 </button>
@@ -80,10 +79,10 @@ const App: React.FC = () => {
 
       {/* ================= MOBILE TOP BAR (Logo Only) ================= */}
       <div className="md:hidden bg-white/95 backdrop-blur-md sticky top-0 z-40 shadow-sm border-b border-slate-200 py-4 px-4 flex justify-center items-center">
-          <div className="flex items-center gap-2" onClick={() => scrollToSection('hero')}>
-             <div className="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center text-white text-lg font-bold">P</div>
-             <span className="font-extrabold text-xl text-slate-900">控磷新革命</span>
-          </div>
+        <div className="flex items-center gap-2" onClick={() => scrollToSection('hero')}>
+          <div className="w-8 h-8 bg-blue-700 rounded-lg flex items-center justify-center text-white text-lg font-bold">P</div>
+          <span className="font-extrabold text-xl text-slate-900">控磷新觀念</span>
+        </div>
       </div>
 
       <main className="flex-grow">
@@ -109,7 +108,7 @@ const App: React.FC = () => {
       {/* ================= MOBILE BOTTOM NAVIGATION (Hidden on Desktop) ================= */}
       <div className="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-slate-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-50 px-6 pb-safe pt-2">
         <div className="flex justify-between items-center h-16">
-          <button 
+          <button
             onClick={() => scrollToSection('hero')}
             className={`flex flex-col items-center gap-1 w-16 ${activeSection === 'hero' ? 'text-blue-700' : 'text-slate-400'}`}
           >
@@ -117,7 +116,7 @@ const App: React.FC = () => {
             <span className="text-[10px] font-bold">核心</span>
           </button>
 
-          <button 
+          <button
             onClick={() => scrollToSection('shopping')}
             className={`flex flex-col items-center gap-1 w-16 ${activeSection === 'shopping' ? 'text-blue-700' : 'text-slate-400'}`}
           >
@@ -125,7 +124,7 @@ const App: React.FC = () => {
             <span className="text-[10px] font-bold">指南</span>
           </button>
 
-          <button 
+          <button
             onClick={() => scrollToSection('traffic')}
             className={`flex flex-col items-center gap-1 w-16 ${activeSection === 'traffic' ? 'text-blue-700' : 'text-slate-400'}`}
           >
@@ -133,7 +132,7 @@ const App: React.FC = () => {
             <span className="text-[10px] font-bold">紅綠燈</span>
           </button>
 
-          <button 
+          <button
             onClick={() => scrollToSection('cooking')}
             className={`flex flex-col items-center gap-1 w-16 ${activeSection === 'cooking' ? 'text-blue-700' : 'text-slate-400'}`}
           >

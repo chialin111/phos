@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FunnelChart, Funnel, LabelList, ResponsiveContainer, Cell, Tooltip } from 'recharts';
-import { ArrowDown, MousePointerClick, AlertCircle, CheckCircle2, HelpCircle, ChevronRight } from 'lucide-react';
+import { ArrowDown, MousePointerClick, AlertCircle, CheckCircle2, HelpCircle } from 'lucide-react';
 
 const data = [
   {
@@ -40,7 +40,7 @@ export const HeroPyramid: React.FC = () => {
 
   const activeData = activeIndex !== null ? data[activeIndex] : data[0];
 
-  const handleInteraction = (_: any, index: number) => {
+  const handleInteraction = (_: unknown, index: number) => {
     setActiveIndex(index);
     // On Mobile: smooth scroll to details card so user sees the change immediately
     if (window.innerWidth < 1024) {
